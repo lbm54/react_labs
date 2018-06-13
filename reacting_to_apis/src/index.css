@@ -1,0 +1,11 @@
+.card {
+    width: 20rem;
+    height: 30rem;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.card-body {
+    display: flex;
+    text-overflow: none;
+}
