@@ -2,14 +2,14 @@ import React from "react";
 
 const Card = props => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="card-header bg-primary">
-          {props.cardData.name} @{props.cardData.handle}
+      <div className="col-3 m-1 card bg-light">
+        <div className="card-body">
+          <div className="card-title">
+            {props.cardData.name} @{props.cardData.handle}
+          </div>
+          <div className="card-text">{props.cardData.body}</div>
         </div>
-        <div className="card-text bg-light">{props.cardData.body}</div>
       </div>
-    </div>
   );
 };
 

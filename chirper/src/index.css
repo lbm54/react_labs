@@ -4,20 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.card {
-  width: 20rem; 
-  margin: 1rem 1rem 0 0;
-  display: inline-block;
-}
-
-.cardSubmitForm {
-  margin: 1rem;
-}
-
 label {
   width: 5rem;
-}
-
-.cardList {
-  margin: 2rem;
 }

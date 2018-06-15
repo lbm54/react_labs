@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import CardList from "./components/CardList";
+import ChirpSubmit from "./components/ChirpSubmit";
 
 class App extends Component {
   constructor(props) {
@@ -26,51 +27,28 @@ class App extends Component {
       ]
     };
 
-    this.handleClick = (event) => {
-        let newChirp = {
-            name: document.getElementById("inputNameField").value,
-            handle: document.getElementById("inputHandleField").value,
-            body: document.getElementById("inputBodyField").value
-        }
-        this.setState({
-            chirps: this.state.chirps.concat([newChirp])
-        })
+    this.handleClick = event => {
+      let newChirp = {
+        name: document.getElementById("inputNameField").value,
+        handle: document.getElementById("inputHandleField").value,
+        body: document.getElementById("inputBodyField").value
+      };
+      this.setState({
+        chirps: this.state.chirps.concat([newChirp])
+      });
     };
   }
 
   render() {
     return (
-      <React.Fragment>
-        <CardList cardArray={this.state.chirps} />
-
-        <div className="cardSubmitForm">
-          <div className="row">
-            <div className="col-lg-3">
-              <label htmlFor="inputNameField">Name:</label>
-              <input type="text" id="inputNameField" placeholder="Name" />
-            </div>
-            <div className="col-lg-3">
-              <label htmlFor="inputHandleField">Handle:</label>
-              <input type="text" id="inputHandleField" placeholder="Handle" />
-            </div>
-            <div className="col-lg-3">
-              <label htmlFor="inputBodyField">Body:</label>
-              <input type="text" id="inputBodyField" placeholder="Body" />
-            </div>
-            <div className="col-lg-3">
-              <button
-                name="cardSubmitButton"
-                onClick={event => this.handleClick(event)}
-              >
-                Chirp
-              </button>
-            </div>
-          </div>
+      <div className="container-fluid m-2">
+        <div className="row">
+          <CardList cardArray={this.state.chirps} />
+          <ChirpSubmit handleClick={this.handleClick} />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
 export default App;
-
